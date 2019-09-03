@@ -16,7 +16,7 @@ anchors = np.array(anchors).reshape(-1, 2)
 num_anchors = len(anchors)
 
 num_classes = len(class_names)
-textModel = yolo_text(num_classes,anchors)
+textModel = yolo_text(num_classes, anchors)
 textModel.load_weights(kerasTextModel)
 
 
