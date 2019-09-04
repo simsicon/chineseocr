@@ -15,7 +15,7 @@ num_classes = len(class_names)
 model = yolo_text(num_classes, anchors)
 model.load_weights(kerasTextModel)
 
-export_path = "models/1"
+export_path = "models/yolov3/1"
 
 with tf.keras.backend.get_session() as sess:
 

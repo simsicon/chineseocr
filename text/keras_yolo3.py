@@ -408,10 +408,10 @@ def __tf_jpeg_process(data):
                                  dct_method="INTEGER_FAST")
 
     image = tf.image.resize_images(image, (608, 608),
-                               method=tf.image.ResizeMethod.BILINEAR,
+                               method=tf.image.ResizeMethod.BICUBIC,
                                align_corners=True)
 
-    image = tf.image.convert_image_dtype(image, tf.float32, saturate=True)
+    image = image / 255.0
 
     return image
 

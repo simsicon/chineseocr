@@ -10,7 +10,7 @@ class strLabelConverter(object):
         for i, char in enumerate(alphabet):
             # NOTE: 0 is reserved for 'blank' required by wrap_ctc
             self.dict[char] = i + 1
-            
+
     def decode(self,res):
         N = len(res)
         raw = []
@@ -18,7 +18,7 @@ class strLabelConverter(object):
             if res[i] != 0 and (not (i > 0 and res[i - 1] == res[i])):
                 raw.append(self.alphabet[res[i] - 1])
         return ''.join(raw)
- 
+
 
 class resizeNormalize(object):
 
